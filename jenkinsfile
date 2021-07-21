@@ -36,16 +36,8 @@ pipeline {
 			             steps {
 				           sh 'sleep 5'
 					   echo 'testing phase4'
-					   }
-				}
-			}
-		}	
-					steps {
-				sh '''
-					pwd
-					sleep 5
-					echo This is the fist stage: TEST
-				'''
+					}
+				}	
 			}	
 		}
 		
@@ -60,3 +52,4 @@ pipeline {
 		}
 	}
 
+}
