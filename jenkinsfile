@@ -12,7 +12,35 @@ pipeline {
 		}
 		
 		stage('TEST') {
-			steps {
+		       parallel {
+		               stage('TEST1') {
+			             steps {
+				           sh 'sleep 5'
+					   echo 'testing phase1'
+					   }
+					  
+				}
+				stage('TEST2') {
+			             steps {
+				           sh 'sleep 5'
+					   echo 'testing phase2'
+					   }
+				}	   
+					   stage('TEST3') {
+			             steps {
+				           sh 'sleep 5'
+					   echo 'testing phase3'
+					   }
+				}	   
+				stage('TEST4') {
+			             steps {
+				           sh 'sleep 5'
+					   echo 'testing phase4'
+					   }
+				}
+			}
+		}	
+					steps {
 				sh '''
 					pwd
 					sleep 5
